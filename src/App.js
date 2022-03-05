@@ -6,28 +6,23 @@ import { useState, useEffect } from "react"
 function App() {
 
   const [contacts, setContacts] = useState([])
-  const [photos, setPhotos] = useState([])
-
-  let URL = "https://jsonplaceholder.typicode.com/users"
-  let photoURL = "https://jsonplaceholder.typicode.com/photos/?_limit=10"
+  const [images, setImages] = useState([])
 
   useEffect(() => {
-    fetch(URL)
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then(res => res.json())
-      // .then(json => setContacts(json))
       .then(json => setContacts(json))
 
-    fetch(photoURL)
-      .then(res => res.json())
-      // .then(data => setPhotos(data))
-      .then(data => setPhotos(data))
+    // fetch(`https://robohash.org/${Math.random()}.png`)
+    //   .then(res => res.json())
+    //   .then(data => setImages(data))
 
-  }, [URL, photoURL])
+  }, [])
 
   return (
     <div className="App">
-      <Sidebar />
-      <Contactslist contacts={contacts} photos={photos} />
+      <Sidebar contacts={contacts} />
+      <Contactslist contacts={contacts} images={images} setImages={setImages} setContacts={setContacts} />
     </div>
   )
 }

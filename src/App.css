@@ -2,10 +2,11 @@
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 .App {
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
   /* background-color: hsl(0, 100%, 99%); */
   background-color: darkgray;
@@ -22,11 +23,17 @@
   flex-direction: column;
   gap: 20px;
   color: rgba(255, 255, 255, 0.863);
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .Sidebar h3:hover {
   cursor: pointer;
   color: lightgreen;
+}
+
+hr {
+  width:75%;
 }
 
 .Contactslist {
@@ -48,24 +55,38 @@
 .contactContainer:hover {
   transform: translateY(-10px);
   box-shadow: -6px 10px 6px rgba(0, 0, 0, 0.25);
-  /* opacity: 1; */
+  opacity: 1;
 }
 
-.imageContainer {
-}
 
 
 .imageContainer img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid hsl(238, 14%, 40%);
+  background-color: black;
 }
 
 .contactInfo {
   display: flex;
-  width: 40%;
+  width: 80%;
   align-items: center;
-  justify-content: space-evenly;
+}
+
+.name {
+  padding-left: 25px;
+}
+
+.phone {
+  padding-left: 30px;
+  padding-right: 5px;
+  text-align: end;
+}
+
+.company {
+  padding-left: 25px;
 }
 
 .title {

@@ -1,21 +1,20 @@
 import React from 'react'
 import Contact from './Contact'
 
-function Contactslist({ contacts, photos }) {
+function Contactslist({ contacts, images }) {
     return (
         <div className='Contactslist'>
             <div className="title">
-                <h1>Contacts</h1>
+                <h1>🤖 Robo-Contacts</h1>
             </div>
             {
-                contacts.map((contact, index) => {
+                contacts.map((contact) => {
                     return <Contact
-                        key={index}
+                        key={contact.id}
                         name={contact.name}
-                        phone={contact.phone}
-                        image={photos[index].thumbnailUrl
-                            || "https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png"
-                        }
+                        number={contact.phone}
+                        company={contact.company.catchPhrase}
+                        image={`https://robohash.org/${Math.random()}.png` || "https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png"}
                     />
                 })
             }
